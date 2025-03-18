@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Playground</title>
+    <style>
+        body{
+            font-family:Arial,san-serif;
+            text-align:center;
+        }
+        button,input{
+            padding:10px;
+            font-size:16px;
+            margin:5px;
+            cursor:pointer;
+        }
+        ul{
+            list-style-type:none;
+            padding:0;
+        }
+        h2{
+            color:orange;
+        }
+        h3{
+            color:rgb(255, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <h2 id="clock">Time:</h2>
+    <button onclick="changecolor()">Change Background</button><br><br>
+    <button onclick="increasecount()">Click for ++</button>
+    <button onclick="decreasecount()">Clickfor --</button>
+    <h3>Count:<span id="count">0</span></h3>
+    <h3>Count:<span id="Count"></span></h3>
+    <input type="number" id="number" placeholder="Enter a number">
+    <button onclick="checkEvenOdd()">Check Even/Odd</button>
+    <h3 id="result"></h3>
+    <input type="text" id="task" placeholder="Enter task">
+    <button onclick="addTask()">Add Task</button>
+    <ul id="tasklist"></ul>
+    <script>
+        function updateClock() {
+            document.getElementById("clock").innerText = "Time: " + new Date().toLocaleTimeString();
+        }
+        setInterval(updateClock, 1000);
+
+        function changecolor() {
+            let colors = ["red", "blue", "green", "purple", "cyan","black","pink"];
+            document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        let count =0;
+        function increasecount() {
+            count++;
+            document.getElementById("count").innerText = count;
+        }
+let Count=100000000;
+function decreasecount()
+{
+    Count--;
+    document.getElementById("Count").innerText=Count;
+}
+        function checkEvenOdd() {
+            let num = document.getElementById("number").value;
+            if (num === "") {
+                document.getElementById("result").innerText = "Enter a number!";
+                return;
+            }
+            document.getElementById("result").innerText = (num % 2 === 0) ? "Even" : "Odd";
+        }
+
+        function addTask() {
+            let taskInput = document.getElementById("task");
+            let task = taskInput.value.trim();
+            if (task === "") {
+                return;
+            }
+            let li = document.createElement("li");
+            li.innerHTML = task + "<button onclick='removeTask(this)'>Remove</button>";
+            document.getElementById("tasklist").appendChild(li);
+            taskInput.value = "";
+        }
+
+        function removeTask(element) {
+            element.parentElement.remove();
+        }
+    </script>
+</body>
+</html>
