@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+        <style>
+        body{
+            align-items: center;
+            font-family:cursive;
+
+            text-align: center;
+            box-shadow: 3px 3px gray;
+            justify-content: center;
+            height:100vh;
+            display:flex;
+            justify-content: center;
+            margin:0;
+            background-image:url("image.jpg");
+            background-repeat:no-repeat;
+            background-size:cover;
+            filter:opacity(80%);
+
+        }
+        form{
+            box-shadow:3px 2px 5px gray;
+            padding:60px 60px 60px 60px;
+            background-image:url(ba.jpg);
+            background-repeat:no-repeat;
+            background-size:700px;
+            filter: brightness(150%);
+            filter:contrast(200%);
+            
+            
+            
+    
+            
+            
+
+        }
+        input{
+            border-radius:20px;
+            font-size: large;
+        }
+        button:hover{
+            background-color:palegreen;
+            cursor:pointer;
+            
+        }
+        button{
+            background-color:blue;
+            color:antiquewhite;
+            border-radius:10px;
+            width:250px;
+        }
+        input:hover{
+            background-color:antiquewhite
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function validateform(){
+        var v=document.getElementById("username").value;
+        var p=document.getElementById("password").value;
+        
+        if(v===""||p==="")
+            
+        {
+        
+            return false;
+        }
+        else if(p.length<=6)
+        {
+            alert("Enter the password atleast 6 characters")
+            return false;
+
+        }
+        
+        return true;
+        }
+    </script>
+
+
+   <form onsubmit="return validateform();">
+    <h1>Login</h1>
+    <th>
+    <b>User Name:</b><td><input type="text" id="username" name="username" required></td><br><br>
+    </th><br>
+
+    <th>
+    <b>PASSWORD:</b><td><input type="password " id="password" name="password" required></td><br>
+    </th><br>
+    
+    <td><button type="submit" value="Submit"><b>Login</b></button></td>
+    
+    </tr>
+   </form>
+    
+</body>
+
+</html>
