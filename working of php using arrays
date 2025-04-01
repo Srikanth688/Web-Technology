@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<style>
+body{
+background-image:url("https://png.pngtree.com/thumb_back/fh260/background/20230113/pngtree-hd-grassland-rainy-weather-image_1516180.jpg");
+color:white;
+background-size:1500px 1200px;
+background-repeat:no-repeat;
+}
+h1{
+color:white;
+text-shadow:3px 3px 3px gray;
+}
+</style>
+<body>
+
+<?php
+
+echo "<h1>WEATHER DETAILS</H1>";
+$weather =array("rain","sunshine","clouds","hail","sleet","snow","wind");
+echo "we have seen all  kinds of weather this monthy.at the begging of the month,we had $weather[5] and $weather[6].then came $weather[1] with a few $weather[2] and some $weather[0].At least we didn't get any $weather[3] or $weather[4].";
+
+?>
+
+</body>
+</html>
